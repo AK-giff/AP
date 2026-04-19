@@ -7,7 +7,16 @@ const Lead = require("./Lead");
 const port = process.env.PORT || 10000 
 
 const app = express();
-app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+//app.use(express.json());
 
 // DB connect
 mongoose.connect(process.env.MONGO_URI)
